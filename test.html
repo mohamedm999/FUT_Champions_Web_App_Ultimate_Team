@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="max-w-2xl mx-auto mt-10 bg-white p-6 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-semibold text-center text-gray-800 mb-6">Player Information</h2>
+        <form action="#" method="post">
+            <div class="space-y-4">
+                <!-- Name -->
+                <div>
+                    <label for="name" class="block text-gray-600 font-medium">Name:</label>
+                    <input type="text" id="name" name="name" value="Ismael Saibari" readonly class="w-full p-3 mt-1 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 cursor-not-allowed">
+                </div>
+                
+                <!-- Photo -->
+                <div>
+                    <label for="photo" class="block text-gray-600 font-medium">Photo:</label>
+                    <img id="photo" src="https://cdn.sofifa.net/players/259/480/25_120.png" alt="Player Photo" class="w-32 h-32 mx-auto rounded-full">
+                </div>
+                
+                <!-- Position -->
+                <div>
+                    <label for="position" class="block text-gray-600 font-medium">Position:</label>
+                    <input type="text" id="position" name="position" value="CM" readonly class="w-full p-3 mt-1 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 cursor-not-allowed">
+                </div>
+                
+                <!-- Nationality -->
+                <div>
+                    <label for="nationality" class="block text-gray-600 font-medium">Nationality:</label>
+                    <input type="text" id="nationality" name="nationality" value="Morocco" readonly class="w-full p-3 mt-1 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 cursor-not-allowed">
+                </div>
+                
+                <!-- Flag -->
+                <div>
+                    <label for="flag" class="block text-gray-600 font-medium">Flag:</label>
+                    <img id="flag" src="https://cdn.sofifa.net/flags/ma.png" alt="Country Flag" class="w-16 h-10 mx-auto">
+                </div>
+                
+                <!-- Club -->
+                <div>
+                    <label for="club" class="block text-gray-600 font-medium">Club:</label>
+                    <input type="text" id="club" name="club" value="PSV" readonly class="w-full p-3 mt-1 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 cursor-not-allowed">
+                </div>
+                
+                <!-- Club Logo -->
+                <div>
+                    <label for="logo" class="block text-gray-600 font-medium">Club Logo:</label>
+                    <img id="logo" src="https://cdn.sofifa.net/meta/team/682/120.png" alt="Club Logo" class="w-16 h-16 mx-auto">
+                </div>
+                
+                <!-- Rating -->
+                <div>
+                    <label for="rating" class="block text-gray-600 font-medium">Rating:</label>
+                    <input type="number" id="rating" name="rating" value="83" readonly class="w-full p-3 mt-1 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 cursor-not-allowed">
+                </div>
+                
+                <!-- Stats -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label for="pace" class="block text-gray-600 font-medium">Pace:</label>
+                        <input type="number" id="pace" name="pace" value="89" readonly class="w-full p-3 mt-1 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 cursor-not-allowed">
+                    </div>
+                    <div>
+                        <label for="shooting" class="block text-gray-600 font-medium">Shooting:</label>
+                        <input type="number" id="shooting" name="shooting" value="78" readonly class="w-full p-3 mt-1 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 cursor-not-allowed">
+                    </div>
+                    <div>
+                        <label for="passing" class="block text-gray-600 font-medium">Passing:</label>
+                        <input type="number" id="passing" name="passing" value="80" readonly class="w-full p-3 mt-1 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 cursor-not-allowed">
+                    </div>
+                    <div>
+                        <label for="dribbling" class="block text-gray-600 font-medium">Dribbling:</label>
+                        <input type="number" id="dribbling" name="dribbling" value="86" readonly class="w-full p-3 mt-1 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 cursor-not-allowed">
+                    </div>
+                    <div>
+                        <label for="defending" class="block text-gray-600 font-medium">Defending:</label>
+                        <input type="number" id="defending" name="defending" value="55" readonly class="w-full p-3 mt-1 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 cursor-not-allowed">
+                    </div>
+                    <div>
+                        <label for="physical" class="block text-gray-600 font-medium">Physical:</label>
+                        <input type="number" id="physical" name="physical" value="84" readonly class="w-full p-3 mt-1 bg-gray-100 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 cursor-not-allowed">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
