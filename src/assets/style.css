@@ -1,0 +1,16 @@
+body{
+
+    background-image: url(images/b8001525bfd945051b42e47b502d6ca9.jpg);
+    background-size: cover;
+
+      
+
+  }
+
+  .container{
+       
+    background-image: url(images/stadium_background.webp);
+    background-size: cover;
+    border-radius: 10px;
+    height: 700px;
+   }
