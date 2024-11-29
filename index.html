@@ -11,44 +11,116 @@
 <body class=" bg-blue-950 p-6">
   <div class="flex flex-wrap justify-between mx-auto rounded-lg p-8">
         
-    <!-- First Section (Empty Container) -->
-    <div class="container p-4 w-full md:w-3/5">
-        <!-- This section is currently empty -->
-    </div>
-    
+
+        <div class="field-container p-4 w-full md:w-3/5">
+
+            <!-- Forwards -->
+            <div class="player-card LW">LW</div>
+            <div class="player-card ST">ST</div>
+            <div class="player-card RW">RW</div>
+
+            <!-- Midfielders -->
+            <div class="player-card LCM">LCM</div>
+            <div class="player-card CM">CM</div>
+            <div class="player-card RCM">RCM</div>
+
+            <!-- Defenders -->
+            <div class="player-card LB">LB</div>
+            <div class="player-card LCB">LCB</div>
+            <div class="player-card RCB">RCB</div>
+            <div class="player-card RB">RB</div>
+
+            <!-- Goalkeeper -->
+            <div id="gk" class="player-card GK">GK
+
+                <!-- <div class="gk-info">
+                    <div class="photo">
+                        <img src="/src/assets/images/yamin_ya-removebg-preview.png" >
+                    </div>
+
+                    <div class="name">Harry</div>
+
+                    <div class="rating">91</div>
+
+                    <div class="position">ST</div>
+
+                    <div >
+                        <img class="flag" src="/src/assets/images/icons/canada.png" >
+                    </div>
+
+                    <div >
+                        <img class="logo" src="/src/assets/images/logos/borusia-dortmund.png" >
+                    </div>
+
+                    <div class="stats">
+                        <div>
+                            <p>PAC 91 </p>
+                            <p>SHO 93</p>
+                            <p>PAS 89 </p>
+                        </div>
+                        <div>
+                            <p>DRI 99 </p>
+                            <p>DEF 55 </p>
+                            <p>PHY 74 </p>
+                        </div>
+                    </div>
+
+                </div> -->
+
+
+            </div>
+        
+        </div>
     <!-- Second Section (Form Section) -->
-    <div class="form p-4 w-full sm:w-3/4 md:w-1/2 lg:w-1/3 mx-auto">
-        <div class="bg-white shadow-md rounded-lg p-6">
-            <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Player Information</h2>
-            <form>
+    <div class="bg-fom form p-4 w-full sm:w-3/4 md:w-1/2 lg:w-1/3 mx-auto">
+        <div class=" container-form shadow-md rounded-lg p-6">
+            <h2 class="text-2xl font-bold text-center text-white mb-6">Player Information</h2>
+            <form id="playerform">
                 <div class="mb-4">
-                    <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
-                    <input type="text" id="name" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter name" required>
+                    <label for="name" class="block text-white font-medium mb-2">Name</label>
+                    <input type="text" id="name" name="name" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter name" >
+                    <span class="error"></span>
                 </div>
                 <div class="mb-4 flex justify-between">
                     <div >
-                      <label for="photo" class="block text-gray-700 font-medium mb-2">Upload Image</label>
-                      <input  type="file" id="photo" onchange="loadFile(event)" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter photo URL" required style="display: none;">
+                      <label for="photo" class="add-imgs block px-4 py-2 font-medium mb-2 text-black rounded hover:bg-yellow-600 ">Upload Image</label>
+                      <input  type="file" id="photo" onchange="loadprofile(event)" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter photo URL"  style="display: none;">
+                      <span class="error"></span>
                     </div>
-                    <img id="output" width="100" src="/src/assets/images/2503231_sharks-player-profile-silhouette-hd-png-download-removebg-preview.png" />
+                    <div class="style-imgs">
+                        <img id="profile" style="width: 100px; height: 100px;" src="/src/assets/images/2503231_sharks-player-profile-silhouette-hd-png-download-removebg-preview.png" />
+                    </div>
+                    
                 </div>
                 <div class="mb-4">
-                    <label for="position" class="block text-gray-700 font-medium mb-2">Position</label>
-                    <select id="position" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" onchange="toggleFields()" required>
+                    <label for="position" class="block text-white font-medium mb-2">Position</label>
+                    <select id="position" name="position" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" onchange="toggleFields()" >
                         <option value="" disabled selected>Select a position</option>
-                        <option value="GK">GK</option>
-                        <option value="CB">CB</option>
-                        <option value="LB">LB</option>
-                        <option value="RB">RB</option>
-                        <option value="CM">CM</option>
-                        <option value="LW">LW</option>
-                        <option value="RW">RW</option>
-                        <option value="ST">ST</option>
+                        <optgroup label="Goalkeeper">
+                            <option value="GK">GK</option>
+                          </optgroup>
+                          <optgroup label="Defenders">
+                            <option value="LB">LB</option>
+                            <option value="LCB">LCB</option>
+                            <option value="RCB">RCB</option>
+                            <option value="RB">RB</option>
+                          </optgroup>
+                          <optgroup label="Midfielders">
+                            <option value="LCM">LCM</option>
+                            <option value="CM">CM</option>
+                            <option value="RCM">RCM</option>
+                          </optgroup>
+                          <optgroup label="Forwards">
+                            <option value="LW">LW</option>
+                            <option value="ST">ST</option>
+                            <option value="RW">RW</option>
+                          </optgroup>
                     </select>
+                    <span class="error"></span>
                 </div>
                 <div class="mb-4">
-                    <label for="nationality" class="block text-gray-700 font-medium mb-2">Nationality</label>
-                    <select id="nationality" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    <label for="nationality" class="block text-white font-medium mb-2">Nationality</label>
+                    <select id="nationality" name="nationality" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" >
                       <option value="" disabled selected>Select a nationality</option>
                       <option value="us" >United States</option>
                       <option value="gb" >United Kingdom</option>
@@ -58,56 +130,64 @@
                       <option value="es" >Spain</option>
                       <!-- Add more countries and flags as needed -->
                   </select>
+                  <span class="error"></span>
                 </div>
-                <div class="mb-4">
-                    <label for="flag" class="block text-gray-700 font-medium mb-2">Flag select </label>
-                    <select id="flag" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                      <option value="" disabled selected>Select a country</option>
-                      <option value="us" class="flag-icon flag-icon-us"><img src="/src/assets/images/icons/united-states.png" alt=""></option>
-                      <option value="gb" class="flag-icon flag-icon-gb">United Kingdom</option>
-                      <option value="fr" class="flag-icon flag-icon-fr">France</option>
-                      <option value="it" class="flag-icon flag-icon-it">Italy</option>
-                      <option value="ma" class="flag-icon flag-icon-ma">Morocco</option>
-                      <option value="es" class="flag-icon flag-icon-es">Spain</option>
-                      <!-- Add more countries and flags as needed -->
-                  </select>
+                <div class="mb-4 flex justify-between p-3">
+                    <div>
+                      <label for="flag" class="add-imgs block font-medium mb-2 px-4 py-2  rounded hover:bg-yellow-600 ">Add flag </label>
+                      <input  type="file" id="flag" name="flag" onchange="loadflag(event)" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter flag" style="display: none;">
+                      <span class="error"></span>
+                    </div>
+                    <div class="style-imgs">
+                        <img id="flagimg" style="width: 30px; height: 30px;"  src="/src/assets/images/icons/india.png" alt="">
+                    </div>
                 </div>
-                <div class="mb-4">
-                    <label for="club" class="block text-gray-700 font-medium mb-2">Club</label>
-                    <input type="text" id="club" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter club" required>
+                <div class="mb-4 ">
+                    <div>
+                      <label for="club" class="block text-white font-medium mb-2">Club name</label>
+                      <input type="text" id="club" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter club">
+                      <span class="error"></span>
+                    </div>
                 </div>
-                <div class="mb-4">
-                    <label for="logo" class="block text-gray-700 font-medium mb-2">Club Logo URL</label>
-                    <input type="url" id="logo" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter club logo URL" required>
+                <div class="mb-4 flex justify-between p-3">
+                  <div>
+                    <label for="logo" class="add-imgs block font-medium mb-2  text-black rounded hover:bg-yellow-600 ">Add club Logo </label>
+                    <input  type="file" id="logo" onchange="loadlogo(event)" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter club logo URL" style="display: none;">
+                    <span class="error"></span>
+                  </div>
+                  <div class="style-imgs">
+                    <img id="logoimg" style="width: 30px; height: 30px;" src="/src/assets/images/logos/club.png" alt=""> 
+                  </div>
                 </div>
+
                 <div id="outfield-fields" class="hidden">
                   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                     <div>
-                        <label for="rating" class="block text-gray-700 font-medium mb-2">Rating</label>
+                        <label for="rating" class="block text-white font-medium mb-2">Rating</label>
                         <input type="number" id="rating" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter rating" min="0" max="100">
                     </div>
                     <div>
-                        <label for="pace" class="block text-gray-700 font-medium mb-2">Pace</label>
+                        <label for="pace" class="block text-white font-medium mb-2">Pace</label>
                         <input type="number" id="pace" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter pace" min="0" max="100">
                     </div>
                     <div>
-                        <label for="shooting" class="block text-gray-700 font-medium mb-2">Shooting</label>
+                        <label for="shooting" class="block text-white font-medium mb-2">Shooting</label>
                         <input type="number" id="shooting" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter shooting" min="0" max="100">
                     </div>
                     <div>
-                        <label for="passing" class="block text-gray-700 font-medium mb-2">Passing</label>
+                        <label for="passing" class="block text-white font-medium mb-2">Passing</label>
                         <input type="number" id="passing" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter passing" min="0" max="100">
                     </div>
                     <div>
-                        <label for="dribbling" class="block text-gray-700 font-medium mb-2">Dribbling</label>
+                        <label for="dribbling" class="block text-white font-medium mb-2">Dribbling</label>
                         <input type="number" id="dribbling" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter dribbling" min="0" max="100">
                     </div>
                     <div>
-                        <label for="defending" class="block text-gray-700 font-medium mb-2">Defending</label>
+                        <label for="defending" class="block text-white font-medium mb-2">Defending</label>
                         <input type="number" id="defending" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter defending" min="0" max="100">
                     </div>
                     <div>
-                        <label for="physical" class="block text-gray-700 font-medium mb-2">Physical</label>
+                        <label for="physical" class="block text-white font-medium mb-2">Physical</label>
                         <input type="number" id="physical" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter physical" min="0" max="100">
                     </div>
                 </div>
@@ -116,31 +196,31 @@
                 <div id="goalkeeper-fields" class="hidden">
                   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                     <div>
-                        <label for="rating" class="block text-gray-700 font-medium mb-2">Rating</label>
+                        <label for="rating" class="block text-white font-medium mb-2">Rating</label>
                         <input type="number" id="rating" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter rating" min="0" max="100">
                     </div>
                     <div>
-                        <label for="diving" class="block text-gray-700 font-medium mb-2">Diving</label>
+                        <label for="diving" class="block text-white font-medium mb-2">Diving</label>
                         <input type="number" id="diving" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter diving" min="0" max="100">
                     </div>
                     <div>
-                        <label for="handling" class="block text-gray-700 font-medium mb-2">Handling</label>
+                        <label for="handling" class="block text-white font-medium mb-2">Handling</label>
                         <input type="number" id="handling" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter handling" min="0" max="100">
                     </div>
                     <div>
-                        <label for="kicking" class="block text-gray-700 font-medium mb-2">Kicking</label>
+                        <label for="kicking" class="block text-white font-medium mb-2">Kicking</label>
                         <input type="number" id="kicking" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter kicking" min="0" max="100">
                     </div>
                     <div>
-                        <label for="reflexes" class="block text-gray-700 font-medium mb-2">Reflexes</label>
+                        <label for="reflexes" class="block text-white font-medium mb-2">Reflexes</label>
                         <input type="number" id="reflexes" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter reflexes" min="0" max="100">
                     </div>
                     <div>
-                        <label for="speed" class="block text-gray-700 font-medium mb-2">Speed</label>
+                        <label for="speed" class="block text-white font-medium mb-2">Speed</label>
                         <input type="number" id="speed" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter speed" min="0" max="100">
                     </div>
                     <div>
-                        <label for="positioning" class="block text-gray-700 font-medium mb-2">Positioning</label>
+                        <label for="positioning" class="block text-white font-medium mb-2">Positioning</label>
                         <input type="number" id="positioning" class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter positioning" min="0" max="100">
                     </div>
                 </div>
@@ -153,13 +233,15 @@
         </div>
     </div>
 
-    <div class="form p-4 w-full md:w-1/4">
-      jfi56
+    <div id="reserve" class="form p-4 w-full md:w-1/4">
+      
 
     </div>
 
 </div>
 </body>
+<!-- <script src="/src/assets/validation.js"></script> -->
+<script type="module" src="/src/assets/saveFomData.js"></script>
 <script>
  
 function toggleFields() {
@@ -177,9 +259,28 @@ function toggleFields() {
             }
 }
 
-var loadFile = function(event) {
-        var image = document.getElementById('output');
-        image.src = URL.createObjectURL(event.target.files[0]);
+let loadprofile = function(event) {
+
+        const imgProfile = document.getElementById('profile');
+
+        imgProfile.src = URL.createObjectURL(event.target.files[0]);
+          
+};
+
+let loadflag = function(event) {
+
+        const imgFlag = document.getElementById('flagimg');
+
+        imgFlag.src = URL.createObjectURL(event.target.files[0]);
+          
+};
+
+let loadlogo = function(event) {
+
+        const imgLogo = document.getElementById('logoimg');
+
+        imgLogo.src = URL.createObjectURL(event.target.files[0]);
+          
 };
 </script>
 </html>
