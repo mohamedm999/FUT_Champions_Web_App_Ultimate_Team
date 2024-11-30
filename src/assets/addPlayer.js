@@ -11,7 +11,6 @@ export default function addplayer(player) {
 
     }else {
 
-        
         innerplayer(player,pl)
 
 
