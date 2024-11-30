@@ -1,4 +1,5 @@
 import validation from "./validation.js";
+import  addplayer  from "./addPlayer.js";
 
 
 
@@ -11,13 +12,11 @@ playerform.addEventListener('submit',function (e) {
 
     e.preventDefault(); 
 
-
-
     // if (validation()) {} ;
 
     let imgProfile = document.getElementById('profile');
-    imgProfile.addEventListener("onchange",function (e) {
-            imgProfile.src = URL.createObjectURL(e.target.files[0]);
+    imgProfile.addEventListener("onchange",function (event) {
+            imgProfile.src = URL.createObjectURL(event.target.files[0]);
     })
 
 
@@ -55,70 +54,11 @@ playerform.addEventListener('submit',function (e) {
     
     
         localStorage.setItem('players', JSON.stringify(players));
-    
-    
+        
         playerform.reset();
+
+        
     
 })
-
-
-
-function addplayer(player) {
-
-    if (player.position == "") {
-        
-    }
-
-    let goalKepeer = document.getElementById('gk')
-
-    let reserve = document.getElementById('reserve')
-
-    const card = document.createElement('div');
-
-    card.className = "gk-info";
-
-
-    card.innerHTML = `
-                                <div class="photo">
-                <img src="${player.photo}" >
-            </div>
-
-            <div class="name">${player.name}</div>
-
-            <div class="rating">91</div>
-
-            <div class="position">ST</div>
-
-            <div >
-                <img class="flag" src="/src/assets/images/icons/canada.png" >
-            </div>
-
-            <div >
-                <img class="logo" src="/src/assets/images/logos/borusia-dortmund.png" >
-            </div>
-
-            <div class="stats">
-                <div>
-                    <p>PAC 91 </p>
-                    <p>SHO 93</p>
-                    <p>PAS 89 </p>
-                </div>
-                <div>
-                    <p>DRI 99 </p>
-                    <p>DEF 55 </p>
-                    <p>PHY 74 </p>
-                </div>
-            </div>
-    
-    `
-
-    goalKepeer.appendChild(card);
-    
-}
-
-
-
-
-
 
 
