@@ -8,9 +8,10 @@ export default function addplayer(player) {
     if (player.position == "GK") {
 
         innergoalkeeper(player,pl)
-        
+
     }else {
 
+        
         innerplayer(player,pl)
 
 
