@@ -9,11 +9,10 @@ function editplayer(player){
 
     playerform = document.forms['playerform'];
 
-    
     if (player.position == "GK") {
 
         playerform.elements["name"].value = player.name;
-        
+
         // playerform.elements["photo"].value = player.photo;
         playerform.elements["position"].value = player.position;
         playerform.elements["nationality"].value = player.nationality;
